@@ -51,11 +51,11 @@ def choice_conversion():
     int_choice = int(choice)
     return int_choice
 
-current_time = datetime.datetime.now()
-remove_microsecond = current_time.replace(microsecond = 0) 
 def add_log(die, result):
+    current_time = datetime.datetime.now()
+    formatted_time = current_time.strftime("%I:%M:%S %p") 
     logWindow.config(state='normal')
-    logWindow.insert(END, f"{remove_microsecond}: Rolled a D{choice_conversion()}: {result}\n")
+    logWindow.insert(END, f"{formatted_time}: Rolled a D{choice_conversion()}: {result}\n")
     logWindow.see(END)  # Auto-scroll
     logWindow.config(state='disabled')
 
