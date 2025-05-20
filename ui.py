@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-from logic import roll_die, format_log_entry, choice_conversion
+from logic import roll_die, format_log_entry
 
 dice_options = ["D4", "D6", "D8", "D10", "D12", "D20"]
 
@@ -46,5 +46,3 @@ def create_ui(root):
 
     for child in mainframe.winfo_children():
         child.grid_configure(padx=5, pady=5)
-
-    root.bind("<Return>", roll)
